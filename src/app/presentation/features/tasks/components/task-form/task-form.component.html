@@ -1,0 +1,58 @@
+<form [formGroup]="taskForm" (ngSubmit)="onSubmit()" class="task-form">
+  <h2>{{ isEditMode ? 'Editar tarea' : 'Nueva tarea' }}</h2>
+
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Título</mat-label>
+    <input
+      matInput
+      class="black-text"
+      formControlName="title"
+      placeholder="Ej. Completar informe mensual"
+      [disabled]="loading">
+    <mat-error *ngIf="hasError('title', 'required')">
+      El título es obligatorio
+    </mat-error>
+    <mat-error *ngIf="hasError('title', 'maxlength')">
+      El título no puede exceder los 100 caracteres
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="form-field">
+    <mat-label>Descripción</mat-label>
+    <textarea
+      matInput
+      class="black-text"
+      formControlName="description"
+      placeholder="Ej. Recopilar datos de ventas y generar gráficos"
+      rows="3"
+      [disabled]="loading">
+    </textarea>
+    <mat-error *ngIf="hasError('description', 'required')">
+      La descripción es obligatoria
+    </mat-error>
+    <mat-error *ngIf="hasError('description', 'maxlength')">
+      La descripción no puede exceder los 500 caracteres
+    </mat-error>
+  </mat-form-field>
+
+  <div class="form-actions">
+    <button
+      *ngIf="isEditMode"
+      type="button"
+      mat-button
+      color="warn"
+      (click)="onCancel()"
+      [disabled]="loading">
+      Cancelar
+    </button>
+
+    <button
+      type="submit"
+      mat-raised-button
+      color="primary"
+      [disabled]="taskForm.invalid || loading">
+      <mat-icon>{{ isEditMode ? 'save' : 'add' }}</mat-icon>
+      {{ isEditMode ? 'Actualizar' : 'Agregar' }}
+    </button>
+  </div>
+</form>

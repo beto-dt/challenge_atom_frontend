@@ -1,0 +1,46 @@
+<div class="login-container">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <mat-card-title>Iniciar Sesión</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="form-field">
+          <mat-label>Correo electrónico</mat-label>
+          <input
+            matInput
+            formControlName="email"
+            placeholder="ejemplo@correo.com"
+            type="email"
+            autocomplete="email">
+          <mat-icon matPrefix>email</mat-icon>
+          <mat-error *ngIf="hasError('email', 'required') || hasError('email', 'email')">
+            {{ getErrorMessage('email') }}
+          </mat-error>
+        </mat-form-field>
+
+        <div class="form-actions">
+          <button
+            mat-raised-button
+            color="primary"
+            type="submit"
+            [disabled]="loginForm.invalid || (loading$ | async)">
+            Continuar
+          </button>
+        </div>
+      </form>
+
+      <app-loading-indicator
+        *ngIf="loading$ | async"
+        diameter = 40
+        class="login-loader">
+      </app-loading-indicator>
+    </mat-card-content>
+
+    <mat-card-footer class="login-footer">
+      <p>Ingresa tu correo electrónico para continuar</p>
+      <p class="login-help">Si no tienes una cuenta, se te dará la opción de crear una</p>
+    </mat-card-footer>
+  </mat-card>
+</div>

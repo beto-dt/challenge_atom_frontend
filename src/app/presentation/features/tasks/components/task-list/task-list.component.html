@@ -1,0 +1,48 @@
+<div class="task-container">
+  <header class="task-header">
+    <h1>Mis Tareas</h1>
+
+    <button mat-raised-button color="warn" (click)="logout()">
+      <mat-icon>exit_to_app</mat-icon>
+      Cerrar sesión
+    </button>
+  </header>
+
+  <app-task-form
+    [task]="selectedTask"
+    [loading]="(savingTask$ | async) || false"
+    (submitTask)="onTaskSubmit($event)"
+    (cancelEdit)="onCancelEdit()">
+  </app-task-form>
+
+  <div class="task-list-container">
+    <h2>
+      {{ selectedTask ? 'Continúa editando arriba' : 'Tareas pendientes' }}
+      <span *ngIf="(tasks$ | async)?.length" class="task-count">
+        ({{ (tasks$ | async)?.length }})
+      </span>
+    </h2>
+
+    <app-loading-indicator
+      *ngIf="(loading$ | async) && !(tasks$ | async)"
+      [diameter]="40"
+      text="Cargando tareas...">
+    </app-loading-indicator>
+
+    <div class="task-list" *ngIf="!(loading$ | async) || (tasks$ | async)?.length">
+      <app-task-item
+        *ngFor="let task of (tasks$ | async); trackBy: trackByTaskId"
+        [task]="task"
+        (statusChange)="onTaskStatusChange($event)"
+        (editTask)="onEditTask($event)"
+        (deleteTask)="onDeleteTask($event)">
+      </app-task-item>
+
+      <div class="empty-state" *ngIf="(tasks$ | async)?.length === 0">
+        <mat-icon class="empty-icon">assignment</mat-icon>
+        <p>No hay tareas disponibles</p>
+        <p class="empty-subtitle">¡Agrega una nueva tarea usando el formulario de arriba!</p>
+      </div>
+    </div>
+  </div>
+</div>
