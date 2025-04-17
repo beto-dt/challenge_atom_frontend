@@ -8,6 +8,7 @@ Esta aplicación permite a los usuarios gestionar sus tareas diarias, con capaci
 - TypeScript
 - Firebase (Hosting, Firestore, Cloud Function)
 - Angular Material
+- CompoDob
 
 ## Requisitos previos
 - Node.js (v18+)
@@ -37,6 +38,11 @@ La aplicación sigue arquitectura limpia con las siguientes capas:
 - Diseño responsive
 - Interfaz de usuario intuitiva
 - Generador del archivo environment a partir del archivo .env(secrets)'
+
+
+## Generar Documentacion mas detallada usando compodoc
+1. Para generar y servir la documentación (con hot reload) :  `npm run docs`
+2. Para solo generar la documentación :  `npm run docs:build`
 
 ## Subir a Hosting Firebase
 1. Nos logemoas en Firebas : `firbase login`

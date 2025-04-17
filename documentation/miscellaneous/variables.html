@@ -1,0 +1,768 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>tareas-app documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">tareas-app documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#appConfig" title="src/app/app.config.ts" ><b>appConfig</b>&nbsp;&nbsp;&nbsp;(src/.../app.config.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#AppRoutes" title="src/app/config/app-settings.ts" ><b>AppRoutes</b>&nbsp;&nbsp;&nbsp;(src/.../app-settings.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#AppSettings" title="src/app/config/app-settings.ts" ><b>AppSettings</b>&nbsp;&nbsp;&nbsp;(src/.../app-settings.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#AuthErrors" title="src/app/config/error-messages.ts" ><b>AuthErrors</b>&nbsp;&nbsp;&nbsp;(src/.../error-messages.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#componentExports" title="src/app/shared/shared.module.ts" ><b>componentExports</b>&nbsp;&nbsp;&nbsp;(src/.../shared.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#environment" title="src/environments/environment.ts" ><b>environment</b>&nbsp;&nbsp;&nbsp;(src/.../environment.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#errorInterceptor" title="src/app/core/http/interceptors/error.interceptor.ts" ><b>errorInterceptor</b>&nbsp;&nbsp;&nbsp;(src/.../error.interceptor.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#httpTokenInterceptor" title="src/app/core/http/interceptors/http.token.interceptor.ts" ><b>httpTokenInterceptor</b>&nbsp;&nbsp;&nbsp;(src/.../http.token.interceptor.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#materialModules" title="src/app/shared/shared.module.ts" ><b>materialModules</b>&nbsp;&nbsp;&nbsp;(src/.../shared.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ModulesErrors" title="src/app/config/error-messages.ts" ><b>ModulesErrors</b>&nbsp;&nbsp;&nbsp;(src/.../error-messages.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ServiceErrors" title="src/app/config/error-messages.ts" ><b>ServiceErrors</b>&nbsp;&nbsp;&nbsp;(src/.../error-messages.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#ValidationErrors" title="src/app/config/error-messages.ts" ><b>ValidationErrors</b>&nbsp;&nbsp;&nbsp;(src/.../error-messages.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>src/app/app.config.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="appConfig"></a>
+                    <span class="name">
+                        <span ><b>appConfig</b></span>
+                        <a href="#appConfig"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>ApplicationConfig</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  providers: [
+    provideRouter(
+      routes,
+      withViewTransitions(),
+      withComponentInputBinding()
+    ),
+
+    provideHttpClient(
+      withInterceptors([
+        httpTokenInterceptor,
+        errorInterceptor
+      ])
+    ),
+
+    provideAnimations(),
+
+    provideClientHydration(),
+
+    {
+      provide: ErrorHandler,
+      useClass: ErrorHandlerService
+    },
+
+    {
+      provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
+      useValue: {
+        duration: 3000,
+        horizontalPosition: &#x27;center&#x27;,
+        verticalPosition: &#x27;bottom&#x27;
+      }
+    },
+  ]
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/config/app-settings.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AppRoutes"></a>
+                    <span class="name">
+                        <span ><b>AppRoutes</b></span>
+                        <a href="#AppRoutes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  login: &#x27;/login&#x27;,
+  tasks: &#x27;/tasks&#x27;,
+  notFound: &#x27;/not-found&#x27;
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Rutas principales de la aplicación</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AppSettings"></a>
+                    <span class="name">
+                        <span ><b>AppSettings</b></span>
+                        <a href="#AppSettings"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  appName: &#x27;TaskManager&#x27;,
+  storage: {
+    userKey: &#x27;currentUser&#x27;,
+    tasksKey: &#x27;userTasks&#x27;
+  },
+  pagination: {
+    defaultPageSize: 10,
+    pageSizeOptions: [5, 10, 25, 50]
+  },
+  durations: {
+    toastMessage: 3000,
+    loadingTimeout: 30000
+  },
+  validation: {
+    minPasswordLength: 6,
+    maxTitleLength: 100,
+    maxDescriptionLength: 500
+  },
+  dateFormat: {
+    default: &#x27;dd/MM/yyyy&#x27;,
+    withTime: &#x27;dd/MM/yyyy HH:mm&#x27;,
+    iso: &#x27;yyyy-MM-dd&#x27;
+  }
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Configuraciones generales de la aplicación</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/config/error-messages.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="AuthErrors"></a>
+                    <span class="name">
+                        <span ><b>AuthErrors</b></span>
+                        <a href="#AuthErrors"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  session: &#x27;Tu sesión ha expirado. Por favor, inicia sesión nuevamente.&#x27;,
+  occasional_error: &#x27;Ha ocurrido un error inesperado&#x27;,
+  bad_request: &#x27;Solicitud incorrecta&#x27;,
+  unauthorized: &#x27;No autorizado&#x27;,
+  access_prohibited: &#x27;Acceso prohibido&#x27;,
+  resource_not_found: &#x27;Recurso no encontrado&#x27;,
+  internal_server_error: &#x27;Error interno del servidor&#x27;,
+  no_internet_connection: &#x27;Sin conexión a Internet&#x27;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ModulesErrors"></a>
+                    <span class="name">
+                        <span ><b>ModulesErrors</b></span>
+                        <a href="#ModulesErrors"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  code_module_errpr: &#x27;CoreModule ya está cargado. Debe importarse solo en AppModule.&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ServiceErrors"></a>
+                    <span class="name">
+                        <span ><b>ServiceErrors</b></span>
+                        <a href="#ServiceErrors"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  session: &#x27;Tu sesión ha expirado. Por favor, inicia sesión nuevamente.&#x27;,
+  occasional_error: &#x27;Ha ocurrido un error. Por favor, inténtalo de nuevo.&#x27;,
+  incorrect_data: &#x27;Datos incorrectos. Verifica la información e inténtalo de nuevo.&#x27;,
+  resource_not_found: &#x27;Recurso no encontrado&#x27;,
+  access_prohibited: &#x27;No tienes permisos para realizar esta acción.&#x27;,
+  internal_server_error: &#x27;Error en el servidor. Inténtalo más tarde.&#x27;,
+  no_internet_connection: &#x27;No se pudo conectar con el servidor. Verifica tu conexión a Internet.&#x27;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ValidationErrors"></a>
+                    <span class="name">
+                        <span ><b>ValidationErrors</b></span>
+                        <a href="#ValidationErrors"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  required: &#x27;Este campo es obligatorio&#x27;,
+  email: &#x27;Por favor, introduce un correo electrónico válido&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mensajes de error para validación de formularios</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/shared/shared.module.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="componentExports"></a>
+                    <span class="name">
+                        <span ><b>componentExports</b></span>
+                        <a href="#componentExports"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  ConfirmDialogComponent,
+  LoadingIndicatorComponent,
+  DateFormatPipe,
+  HighlightDirective
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="materialModules"></a>
+                    <span class="name">
+                        <span ><b>materialModules</b></span>
+                        <a href="#materialModules"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+  MatButtonModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatDialogModule,
+  MatFormFieldModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatProgressSpinnerModule,
+  MatSnackBarModule,
+  MatTooltipModule
+]</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/environments/environment.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="environment"></a>
+                    <span class="name">
+                        <span ><b>environment</b></span>
+                        <a href="#environment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  production: true,
+  apiUrl: &#x27;https://api-hh3d764h5q-uc.a.run.app/api&#x27;,
+  firebase: {
+    apiKey: &#x27;AIzaSyBUBMvqudQ6npv1vJEFCAFTu4gw2T0MQRI&#x27;,
+    authDomain: &#x27;challengeatombackend.firebaseapp.com&#x27;,
+    projectId: &#x27;tu-challengeatombackend&#x27;,
+    storageBucket: &#x27;challengeatombackend.firebasestorage.app&#x27;,
+    messagingSenderId: &#x27;231269805480&#x27;,
+    appId: &#x27;1:231269805480:web:3d1f9eaa6ef503c5abc19d&#x27;
+  }
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/http/interceptors/error.interceptor.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errorInterceptor"></a>
+                    <span class="name">
+                        <span ><b>errorInterceptor</b></span>
+                        <a href="#errorInterceptor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>HttpInterceptorFn</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(request, next) &#x3D;&gt; {
+  const snackBar &#x3D; inject(MatSnackBar);
+  const router &#x3D; inject(Router);
+  const authService &#x3D; inject(AuthService);
+
+  const showErrorMessage &#x3D; (message: string): void &#x3D;&gt; {
+    snackBar.open(message, &#x27;Cerrar&#x27;, {
+      duration: 5000,
+      horizontalPosition: &#x27;center&#x27;,
+      verticalPosition: &#x27;bottom&#x27;,
+      panelClass: [&#x27;error-snackbar&#x27;]
+    });
+  };
+
+  const handleUnauthorizedError &#x3D; (): void &#x3D;&gt; {
+    authService.logout();
+    router.navigate([AppRoutes.login]);
+    showErrorMessage(AuthErrors.session);
+  };
+
+  return next(request).pipe(
+    catchError((error: HttpErrorResponse) &#x3D;&gt; {
+      let errorMessage &#x3D; AuthErrors.occasional_error;
+
+      switch (error.status) {
+        case 400:
+          errorMessage &#x3D; AuthErrors.bad_request;
+          break;
+        case 401:
+          errorMessage &#x3D; AuthErrors.unauthorized;
+          handleUnauthorizedError();
+          break;
+        case 403:
+          errorMessage &#x3D; AuthErrors.access_prohibited;
+          break;
+        case 404:
+          errorMessage &#x3D; AuthErrors.resource_not_found;
+          break;
+        case 500:
+          errorMessage &#x3D; AuthErrors.internal_server_error;
+          break;
+        default:
+          if (!navigator.onLine) {
+            errorMessage &#x3D; AuthErrors.no_internet_connection;
+          } else if (error.error instanceof ErrorEvent) {
+            errorMessage &#x3D; &#x60;Error: ${error.error.message}&#x60;;
+          } else if (error.error &amp;&amp; typeof error.error &#x3D;&#x3D;&#x3D; &#x27;object&#x27; &amp;&amp; error.error.message) {
+            errorMessage &#x3D; error.error.message;
+          }
+      }
+
+      if (error.status !&#x3D;&#x3D; 401) {
+        showErrorMessage(errorMessage);
+      }
+
+      console.error(&#x27;Error HTTP:&#x27;, error);
+
+      return throwError(() &#x3D;&gt; error);
+    })
+  );
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>src/app/core/http/interceptors/http.token.interceptor.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="httpTokenInterceptor"></a>
+                    <span class="name">
+                        <span ><b>httpTokenInterceptor</b></span>
+                        <a href="#httpTokenInterceptor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>HttpInterceptorFn</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(request, next) &#x3D;&gt; {
+  const authService &#x3D; inject(AuthService);
+
+  const currentUser &#x3D; authService.getCurrentUser();
+
+  if (currentUser) {
+    request &#x3D; request.clone({
+      setHeaders: {
+        &#x27;User-ID&#x27;: currentUser.id || &#x27;&#x27;,
+        &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+        &#x27;Accept&#x27;: &#x27;application/json&#x27;
+      }
+    });
+  }
+
+  return next(request);
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
