@@ -1,27 +1,52 @@
-# TareasApp
+# Aplicación de Gestión de Tareas - Challenge_Atom
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.11.
+## Visión general
+Esta aplicación permite a los usuarios gestionar sus tareas diarias, con capacidad para crear, editar, eliminar y marcar tareas como completadas. Implementa una arquitectura limpia con separación de responsabilidades.
 
-## Development server
+## Tecnologías
+- Angular 18
+- TypeScript
+- Firebase (Hosting, Firestore, Cloud Function)
+- Angular Material
+- CompoDob
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Requisitos previos
+- Node.js (v18+)
+- Angular CLI (v17+)
+- Firebase CLI (opcional para desarrollo local)
 
-## Code scaffolding
+## Instalación
+1. Clonar el repositorio: `git clone https://github.com/beto-dt/challenge_atom_frontend`
+2. Instalar dependencias: `npm install`
+3. Agregar a la raiz los archivos .env y .env.production (EL archivo de las secret va a estar adjuntado en el correo)
+4. Ejecutamos el siguiente comando para generar el archivo environment.ts
+   - `npm run config` => para generar las secret en modo local
+   - `npm run config:prod` => para generar las secret en modo production
+5. Iniciar servidor de proyecto: `npm run start`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Estructura del proyecto
+La aplicación sigue arquitectura limpia con las siguientes capas:
 
-## Build
+- **Presentación**: Componentes, pages, facades
+- **Dominio**: Modelos, interfaces de repositorios
+- **Data**: Implementaciones de repositorios, servicios API
+- **Core**: Servicios compartidos globales
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Características
+- Autenticación simplificada (solo email)
+- Gestión completa de tareas (CRUD)
+- Diseño responsive
+- Interfaz de usuario intuitiva
+- Generador del archivo environment a partir del archivo .env(secrets)'
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Generar Documentacion mas detallada usando compodoc
+1. Para generar y servir la documentación (con hot reload) :  `npm run docs`
+2. Para solo generar la documentación :  `npm run docs:build`
 
-## Running end-to-end tests
+## Subir a Hosting Firebase
+1. Nos logemoas en Firebas : `firbase login`
+2. Contruimos el proyecto : `npm run build`
+3. Subir el proyecto a Firebase : `firebase deploy`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Como dato adicional debe estar apuntando en el archivo firebase.json a esta dirección de carpetas => 'dist/tareas-app/browser'

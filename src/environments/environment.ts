@@ -1,8 +1,8 @@
 
 // Este archivo se genera automáticamente - no editar manualmente
 export const environment = {
-  production: false,
-  apiUrl: 'http://127.0.0.1:5001/challengeatombackend/us-central1/api/api',
+  production: true,
+  apiUrl: 'https://api-hh3d764h5q-uc.a.run.app/api',
   firebase: {
     apiKey: 'AIzaSyBUBMvqudQ6npv1vJEFCAFTu4gw2T0MQRI',
     authDomain: 'challengeatombackend.firebaseapp.com',
