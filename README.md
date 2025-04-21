@@ -18,30 +18,9 @@ Esta aplicación permite a los usuarios gestionar sus tareas diarias, con capaci
 ## Instalación
 1. Clonar el repositorio: `git clone https://github.com/beto-dt/challenge_atom_frontend`
 2. Instalar dependencias: `npm install`
-3. Agregar a la raiz los archivos .env y .env.production
+3. Agregar a la raiz los archivos .env y .env.production que estan en el link
 
-.env
-```bash
-API_URL=http://127.0.0.1:5001/challengeatombackend/us-central1/api/api
-FIREBASE_API_KEY=AIzaSyBUBMvqudQ6npv1vJEFCAFTu4gw2T0MQRI
-FIREBASE_AUTH_DOMAIN=challengeatombackend.firebaseapp.com
-FIREBASE_PROJECT_ID=tu-challengeatombackend
-FIREBASE_STORAGE_BUCKET=challengeatombackend.firebasestorage.app
-FIREBASE_MESSAGING_SENDER_ID=231269805480
-FIREBASE_APP_ID=1:231269805480:web:3d1f9eaa6ef503c5abc19d
-```
-
-.env.production
-```bash
-API_URL=https://api-hh3d764h5q-uc.a.run.app/api
-FIREBASE_API_KEY=AIzaSyBUBMvqudQ6npv1vJEFCAFTu4gw2T0MQRI
-FIREBASE_AUTH_DOMAIN=challengeatombackend.firebaseapp.com
-FIREBASE_PROJECT_ID=tu-challengeatombackend
-FIREBASE_STORAGE_BUCKET=challengeatombackend.firebasestorage.app
-FIREBASE_MESSAGING_SENDER_ID=231269805480
-FIREBASE_APP_ID=1:231269805480:web:3d1f9eaa6ef503c5abc19d
-
-```
+https://drive.google.com/drive/folders/1VKc8DydeuV7xT9GNWDcIz4v_PjuylMNZ?usp=sharing
 
 4. Ejecutamos el siguiente comando para generar el archivo environment.ts
    - `npm run config` => para generar las secret en modo local
